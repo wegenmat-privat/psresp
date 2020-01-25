@@ -39,7 +39,7 @@ in agreement with :math:`(1.6 \pm 0.9)` [1]_.
 Please note that in [1]_, only the half width at half maximum is used as an estimate for the slope error,
 resulting in a less restricting estimate.
 
-.. gp-extra-image:: time/example_PSRESP.png
+.. image:: example_PSRESP.png
    :width: 100 %
 
 .. [1] MAGIC collaboration, The 2009 multiwavelength campaign on Mrk 421: Variability and correlation studies,
