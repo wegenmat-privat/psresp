@@ -11,6 +11,11 @@ For each model parameter (i.e. slope of the power law), a success fraction (SUF)
 The slope of the PSD model for the light curve is estimated as the mean of all slopes providing a significant SUF.
 The corresponding error is given by the full width at half maximum (FWHM) of the SUF distribution.
 
+Background
+==========
+The flux variability of an AGN can be described by a power spectral density (PSD) following a pure power law noise, where PSD(f) is proportional to the frequency to the power of alpha [1]_. The light curve and its corresponding PSD could look like this:
+
+
 Getting Started
 ===============
 Input
@@ -42,5 +47,7 @@ resulting in a less restricting estimate.
 .. image:: example_PSRESP.png
    :width: 100 %
 
-.. [1] MAGIC collaboration, The 2009 multiwavelength campaign on Mrk 421: Variability and correlation studies,
+.. [1] Lawrence, A. and I. Papadakis (1993). “X-ray variability of active galactic nuclei - A universal power spectrum with luminosity-dependent amplitude”. In: The Astrophysical Journal 414.10, pp. L85–L88.
+
+.. MAGIC collaboration, The 2009 multiwavelength campaign on Mrk 421: Variability and correlation studies,
    `Link <https://arxiv.org/pdf/1502.02650.pdf>`_
