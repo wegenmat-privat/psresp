@@ -46,7 +46,7 @@ An example for estimating the slope of the power spectral density of an AGN ligh
 The light curve is from the gamma-ray source Mrk 421 observed with MAGIC at energies above 0.3 TeV in 2009 [3]_.
 The PSRESP reveals the slope of the underlying PSD model to :math:`(1.5 \pm 1.3)` days
 in agreement with :math:`(1.6 \pm 0.9)` [3]_.
-Please note that in [1]_, only the half width at half maximum is used as an estimate for the slope error,
+Please note that in [3]_, only the half width at half maximum is used as an estimate for the slope error,
 resulting in a less restricting estimate.
 
 .. image:: example_PSRESP.png
