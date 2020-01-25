@@ -16,7 +16,7 @@ Background
 The flux variability of an AGN can be described by a power spectral density (PSD) following a pure power law noise, where PSD(f) is proportional to the frequency to the power of alpha [2]_. To reveal the PSD of a light curve, the logarithmic periodogram is calculated, where the slope denotes the underlying power:
 
 .. figure:: stoch_powerlaw.png
-   :width: 100 %
+   :width: 50 %
    
    Simulated light curves (left) with an underlying power law PSD and their corresponding periodograms (right).
    The upper panel shows a flicker noise with :math:`alpha = −1`, the lower panel shows a random walk with :math:`alpha = −2`.
@@ -31,7 +31,7 @@ This process is repeated over a grid of trial slopes and the fraction of simulat
 Since simulation and SUF-statistic require a rebinning of light curve and periodogram, the SUF ist calculated also over a grid of bin factors, resulting in a 3-dimensional SUF.
 
 .. figure:: contour.png
-   :width: 100 %
+   :width: 50 %
    
    Contour plot for the bin length of the light curve and bin factor of the logarithmic periodogram for each trial slope.
    The colour denotes the parameter sets providing a success fraction higher than SUF95, that is the 95%-quantile of the success fraction distribution.
