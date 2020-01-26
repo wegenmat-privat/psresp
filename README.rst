@@ -11,6 +11,8 @@ For each model parameter (i.e. slope of the power law), a success fraction (SUF)
 The slope of the PSD model for the light curve is estimated as the mean of all slopes providing a significant SUF.
 The corresponding error is given by the full width at half maximum (FWHM) of the SUF distribution.
 
+The code is written in accordance with gammapy for more convenient inmplementation. Test-scripts for analysis and plot are also provided.
+
 Background
 ==========
 The flux variability of an AGN can be described by a power spectral density (PSD) following a pure power law noise, where PSD(f) is proportional to the frequency to the power of alpha [2]_. To reveal the PSD of a light curve, the logarithmic periodogram is calculated, where the slope denotes the underlying power:
@@ -26,18 +28,17 @@ However, for unevenly sampled data sets like VHE gamma-ray light curves, this si
 The PSRESP takes these effects into account by applying the same sampling as the measurement on numerous simulated light curves.
 The artificial light curves are generated using the algorithm by Timmer and Koenig [4]_ assuming a power-law PSD.
 The periodograms of both observed and simulated light curves are compared using a chi-square-statistic.
-For each simulated light curve, it is checked whether its periodogram fits better the observed periodogram than the mean of simulated periodograms.
-This process is repeated over a grid of trial slopes and the fraction of simulations fulfilling this requirement is denoted as success fraction (SUF).
-Since simulation and SUF-statistic require a rebinning of light curve and periodogram, the SUF ist calculated also over a grid of bin factors, resulting in a 3-dimensional SUF.
+This process is repeated over a grid of trial slopes, as well as bin factors for the light curve and periodogram, since binning is required simulation-wise and for the chi-square-statistic.
+For each set of parameters, the goodness-of-fit is determined by the success fraction (SUF).
 
 .. figure:: contour.png
    :width: 100 %
    
    Contour plot for the bin length of the light curve and bin factor of the logarithmic periodogram for each trial slope.
-   The colour denotes the parameter sets providing a success fraction higher than SUF95, that is the 95%-quantile of the success fraction distribution.
+   The colour denotes the parameter sets providing a 95%-quantile of the success fraction distribution.
 
-Only binning providing the highest SUF is considered for further analysis, where the SUF is depicted over the grid of slope.
-The underlying slope of the PSD is assumed to be reflected as a peak in the SUF with the width of the peak as an error estimate.
+Only binning providing a certain SUF-percentile is considered for further analysis, where the SUF is depicted over the grid of slope.
+The underlying slope of the PSD is assumed to be reflected as a peak in the SUF with the width of the peak as error estimate.
 
 .. figure:: suf.png
    :width: 100 %
@@ -45,8 +46,7 @@ The underlying slope of the PSD is assumed to be reflected as a peak in the SUF 
    Success fraction as a function of the PSD slope for PSRESP parameters satisfying the significance criteria.
    It reveals the correct slope of alpha = 1.6 with an FWHM of 0.5.
 
-Oversampling of the simulated light curve and the number of simulations also affect the methode, but are kept konstant during simulation.
-
+Oversampling of the simulated light curve and the number of simulations also affect this method, but are kept konstant during simulation.
 
 Getting Started
 ===============
@@ -66,6 +66,10 @@ Output
 the success fraction as a function of model parameters (`slopes`, `dt`, `df`),
 parameters `dt` and `df` providing a significant SUF
 and the statistics used to calculate the mean slope and its error.
+
+Test
+----
+Tests for analysis and plot can be carried out with the test-scripts.
 
 Example
 =======
