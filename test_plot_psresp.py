@@ -1,8 +1,8 @@
 import pytest
 import numpy as np
 from numpy.testing import assert_allclose
-from ..psresp import psresp
-from ..plot_psresp import plot_psresp
+from psresp import psresp
+from plot_psresp import plot_psresp
 
 
 def spectrum(x, slope):
