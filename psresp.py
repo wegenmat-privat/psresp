@@ -23,7 +23,7 @@ def _timmerlc(slope, nt='None', dt='None', mean='None', sigma='None', seed='None
     if seed == 'None':
         seed = 42
 
-    simfreq = np.linspace(1, nt/2-1, num=nt/2, dtype='float64') / (dt*nt)
+    simfreq = np.linspace(1, nt/2-1, num=int(nt/2), dtype='float64') / (dt*nt)
     simpsd = _spectrum(simfreq, slope)
     fac = np.sqrt(simpsd)
 
