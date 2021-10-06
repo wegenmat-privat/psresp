@@ -70,8 +70,8 @@ def _periodogram(series):
 
 def _rebinlc(time, rate, dt):
     # check for finite values
-    rate = rate[np.isfinite(time)]
-    time = time[np.isfinite(time)]
+    rate = np.array(rate[np.isfinite(time)]) 
+    time = np.array(time[np.isfinite(time)]) 
 
     # rebin lc/psd to evenly spaced time binning, from rebinlc.pro
     t = time
