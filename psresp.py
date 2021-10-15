@@ -62,7 +62,7 @@ def _periodogram(series):
     for freq, ff in enumerate(revff):
         if freq == 0:
             continue
-        freqs[freq] = freq
+        freqs[freq] = freq + 1
         periodogram_bar[freq] = (abs(ff)**2)
 
     return freqs, periodogram_bar
